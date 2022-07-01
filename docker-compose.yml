@@ -1,0 +1,23 @@
+version: '3.7'
+services:
+  demo_app:
+    build: .
+    image: demoapp:${TAG_NAME}
+    ports:
+      - "${PUBLISHED_PORT}:9999"
+    volumes:
+      - ./logs:/logs
+    user: '${UID}'
+
+    logging:
+      driver: "json-file"
+      options:
+          max-size: "50m"
+          max-file: "3"
+
+    #extra_hosts: 
+      #- "domain:IP"
+
+    command: ["java","-jar","${JAR_FILE}"]
+    ## OVERIDE VIA COMMAND LINE
+    # command: ["java","-jar","test-0.0.1-SNAPSHOT.jar","--spring.profiles.active=uat","--spring.datasource.url=jdbc:postgresql://bookstore_db_uat:5432/postgres","--spring.datasource.password=654321"]
