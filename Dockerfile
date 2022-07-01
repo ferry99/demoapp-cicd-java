@@ -1,7 +1,7 @@
 FROM openjdk:11-jdk-slim AS jdk
 
 # Refer to Maven build -> finalName
-ARG JAR_FILE=target/demoapp-v1.0.0-M.3.jar
+ARG JAR_FILE=target/demoapp-v1.0.0-M.4.jar
 ARG SCRIPT_FILE=config/script/
 
 # cd /opt/app
