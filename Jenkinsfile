@@ -6,20 +6,20 @@ def notifySlack(String buildStatus = 'STARTED') {
     // def cause = currentBuild.rawBuild.getCause(hudson.model.Cause.UserIdCause.class)
     // def name = cause.getUserName()
     def color
-    def msg = "${buildStatus}: `${env.JOB_NAME}` #${env.BUILD_NUMBER}: (<${env.BUILD_URL}|Open>)"
+    def msg = "${buildStatus} : `${env.JOB_NAME}` #${env.BUILD_NUMBER}: (<${env.BUILD_URL}|Open>)"
 
     if (buildStatus == 'STARTED') {
         color = '#D4DADF'
     } else if (buildStatus == 'SUCCESS') {
         color = '#08722E'
-        msg = "${buildStatus}: `${env.JOB_NAME}` #${env.BUILD_NUMBER}\n" +
+        msg = "${buildStatus} : `${env.JOB_NAME}` #${env.BUILD_NUMBER}\n" +
             "Stage : `${env.STAGE_NAME}`\n" +
             "Success after : ${currentBuild.durationString.replace(' and counting', '')} (<${env.BUILD_URL}|Open>)"
     } else if (buildStatus == 'UNSTABLE') {
         color = '#FFFE89'
     } else {
         color = '#FF9FA1'
-        msg = "${buildStatus}: `${env.JOB_NAME}` #${env.BUILD_NUMBER}\n" +
+        msg = "${buildStatus} : `${env.JOB_NAME}` #${env.BUILD_NUMBER}\n" +
             "Stage : `${env.STAGE_NAME}`\n" +
             "Failed after : ${currentBuild.durationString.replace(' and counting', '')} (<${env.BUILD_URL}|Open>)"
     }
