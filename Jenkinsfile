@@ -33,7 +33,7 @@ pipeline {
     environment{
         DOCKERHUB_CREDENTIALS = credentials('docker-hub-ferry9999')
         appname = "demoapp"
-        version = "v1.0.0-M.5"
+        version = "v1.0.0-M.6"
     }
 
     stages {
@@ -80,11 +80,11 @@ pipeline {
         
         stage('Push Images') {
             steps {
-                bat "mvn -v"
-                //   withCredentials([usernamePassword(credentialsId: 'docker-hub-ferry9999', passwordVariable: 'DOCKERHUB_PASS', usernameVariable: 'DOCKERHUB_USERNAME')]) {
-                //         bat "docker login -u $DOCKERHUB_USERNAME -p $DOCKERHUB_PASS"
-                //     }
-                //     bat "docker push ferry9999/${appname}:${version}"
+                // bat "mvn -v"
+                withCredentials([usernamePassword(credentialsId: 'docker-hub-ferry9999', passwordVariable: 'DOCKERHUB_PASS', usernameVariable: 'DOCKERHUB_USERNAME')]) {
+                    bat "docker login -u $DOCKERHUB_USERNAME -p $DOCKERHUB_PASS"
+                }
+                bat "docker push ferry9999/${appname}:${version}"
             }
             post {
                 success {

@@ -24,7 +24,7 @@ public class TestController {
                         "  <tr>\n" +
                         "    <td>Alfreds Futterkiste</td>\n" +
                         "    <td>Maria Anders</td>\n" +
-                        "    <td>Germany</td>\n" +
+                        "    <td>US</td>\n" +
                         "  </tr>\n" +
                         "  <tr>\n" +
                         "    <td>Centro comercial Moctezuma</td>\n" +
