@@ -12,16 +12,16 @@ def notifySlack(String buildStatus = 'STARTED') {
         color = '#D4DADF'
     } else if (buildStatus == 'SUCCESS') {
         color = '#08722E'
-        msg ="${buildStatus}: `${env.JOB_NAME}` #${env.BUILD_NUMBER}\n 
-            Stage : `${env.STAGE_NAME}`\n
-            Success after : ${currentBuild.durationString.replace(' and counting', '')} (<${env.BUILD_URL}|Open>)"
+        msg = "${buildStatus}: `${env.JOB_NAME}` #${env.BUILD_NUMBER}\n" +
+            "Stage : `${env.STAGE_NAME}`\n" +
+            "Success after : ${currentBuild.durationString.replace(' and counting', '')} (<${env.BUILD_URL}|Open>)"
     } else if (buildStatus == 'UNSTABLE') {
         color = '#FFFE89'
     } else {
         color = '#FF9FA1'
-        msg ="${buildStatus}: `${env.JOB_NAME}` #${env.BUILD_NUMBER}\n
-            Stage : `${env.STAGE_NAME}`\n
-            Failed after : ${currentBuild.durationString.replace(' and counting', '')} (<${env.BUILD_URL}|Open>)"
+        msg = "${buildStatus}: `${env.JOB_NAME}` #${env.BUILD_NUMBER}\n" +
+            "Stage : `${env.STAGE_NAME}`\n" +
+            "Failed after : ${currentBuild.durationString.replace(' and counting', '')} (<${env.BUILD_URL}|Open>)"
     }
 
     slackSend(color: color, message: msg)
