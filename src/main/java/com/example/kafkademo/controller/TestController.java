@@ -29,17 +29,17 @@ public class TestController {
                         "  <tr>\n" +
                         "    <td>Centro comercial Moctezuma</td>\n" +
                         "    <td>Francisco Chang</td>\n" +
-                        "    <td>Mexico</td>\n" +
+                        "    <td>US</td>\n" +
                         "  </tr>\n" +
                         "  <tr>\n" +
                         "    <td>Ernst Handel</td>\n" +
                         "    <td>Roland Mendel</td>\n" +
-                        "    <td>Austria</td>\n" +
+                        "    <td>US</td>\n" +
                         "  </tr>\n" +
                         "  <tr>\n" +
                         "    <td>Island Trading</td>\n" +
                         "    <td>Helen Bennett</td>\n" +
-                        "    <td>UK</td>\n" +
+                        "    <td>US</td>\n" +
                         "  </tr>\n" +
                         "</table>\n"
                 + "</body>\n"

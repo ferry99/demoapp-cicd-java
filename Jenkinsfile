@@ -33,7 +33,7 @@ pipeline {
     environment{
         DOCKERHUB_CREDENTIALS = credentials('docker-hub-ferry9999')
         appname = "demoapp"
-        version = "v1.0.0-M.6"
+        version = "v1.0.0-M.7"
     }
 
     stages {
